@@ -88,7 +88,7 @@ onchainos swap quote --from USDC --to <TOKEN_ADDRESS> --amount 100 --chain ether
 
 **Step 2 — 向用户展示报价并请求确认**
 
-向用户展示报价详情（预计获得数量、滑点、手续费），然后询问用户是否确认。
+Show the user the quote details (expected output amount, slippage, fees), then ask the user to confirm.
 
 **MUST ask the user to confirm before proceeding. Do NOT execute the swap unless the user explicitly confirms. If the user does not confirm, abort the operation.**
 

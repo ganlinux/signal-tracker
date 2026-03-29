@@ -76,7 +76,7 @@ onchainos market price --address <TOKEN_ADDRESS> --chain ethereum
 
 ---
 
-### 执行 Swap（需用户确认）
+### 执行 Swap
 
 如果用户看到信号后想买入，**必须按以下步骤操作**：
 
@@ -88,13 +88,11 @@ onchainos swap quote --from USDC --to <TOKEN_ADDRESS> --amount 100 --chain ether
 
 **Step 2 — 向用户展示报价并请求确认**
 
-向用户展示报价详情（预计获得数量、滑点、手续费），然后明确询问：
+向用户展示报价详情（预计获得数量、滑点、手续费），然后询问用户是否确认。
 
-> "以上是本次 Swap 的报价，请问是否确认执行？（是/否）"
+**MUST ask the user to confirm before proceeding. Do NOT execute the swap unless the user explicitly confirms. If the user does not confirm, abort the operation.**
 
-**⚠️ 必须等待用户明确回复"是"或"确认"后，才能执行下一步。若用户未确认或回复"否"，终止操作。**
-
-**Step 3 — 用户确认后执行**
+**Step 3 — Only after user confirms, execute the swap**
 
 ```bash
 onchainos swap swap --from USDC --to <TOKEN_ADDRESS> --amount 100 --chain ethereum

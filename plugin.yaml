@@ -17,15 +17,11 @@ tags:
 components:
   skill:
     dir: skills/signal-tracker
-  binary:
-    repo: ganlinux/plugin-store-community/signal-tracker
-    asset_pattern: "signal-tracker-{target}"
-    checksums_asset: checksums.txt
 
 build:
   lang: rust
   source_repo: ganlinux/signal-tracker
-  source_commit: "0000000000000000000000000000000000000000"  # replace with real commit SHA
+  source_commit: "843f2e633f084f1a4732e18a3f569067e4f98b29"
   source_dir: .
   binary_name: signal-tracker
 
